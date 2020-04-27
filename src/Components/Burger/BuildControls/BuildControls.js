@@ -9,7 +9,6 @@ const controls = [
   { label: "Meat", type: "meat" }
 ];
 const buildControls = props => {
-  console.log(props.purchasable);
   return (
     <div className={classes.BuildControls}>
       <p>
@@ -28,7 +27,11 @@ const buildControls = props => {
           />
         );
       })}
-      <button className={classes.OrderButton} disabled={!props.purchasable}>
+      <button
+        className={classes.OrderButton}
+        disabled={!props.purchasable}
+        onClick={props.ordered}
+      >
         ORDER NOW
       </button>
     </div>
